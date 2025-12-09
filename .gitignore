@@ -1,3 +1,7 @@
+# Configuration files (IMPORTANT: Exclude sensitive environment files)
+.env
+.env.* # (Optional: Exclude any variations like .env.local, etc.)
+
 # Python-generated files
 __pycache__/
 *.py[oc]

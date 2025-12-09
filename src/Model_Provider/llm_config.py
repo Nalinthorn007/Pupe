@@ -3,12 +3,12 @@ from langchain_groq import ChatGroq
 from loguru import logger
 
 
-def get_router_llm(model_name: str = "meta-llama/llama-4-maverick-17b-128e-instruct", temperature: float = 0.0):
+def get_router_llm(model_name: str = "moonshotai/kimi-k2-instruct-0905", temperature: float = 0.0):
     """
     ສ້າງ LLM ສຳລັບ Router/Agent ໂດຍໃຊ້ Groq
     
     Args:
-        model_name: ຊື່ model (default: meta-llama/llama-4-maverick-17b-128e-instruct)
+        model_name: ຊື່ model (default: moonshotai/kimi-k2-instruct-0905)
         temperature: ຄວາມສຸ່ມຂອງ output (0.0 = deterministic)
     
     Returns:

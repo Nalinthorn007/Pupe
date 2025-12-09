@@ -58,6 +58,8 @@ def get_schema_node(state: AgentState) -> dict:
                 result_text += f"  - {col_name}: {data_type} ({null_info}){key_info}\n"
             
             result_text += "\n"
+
+            print("result_text: ", result_text)
         
         cursor.close()
         connection.close()
@@ -136,7 +138,7 @@ def sql_agent_node(state: AgentState) -> dict:
         
         raw_content = response.content
         logger.debug(f"Raw LLM Output: {raw_content}")
-
+    
         # ຖ້າ Model ຫຼົງສົ່ງ \' ມາ, ເຮົາຈະແທນທີ່ມັນດ້ວຍ ' ທຳມະດາ
         if "\\'" in raw_content:
             logger.warning("⚠️ Detected escaped single quotes. Fixing...")
@@ -168,6 +170,8 @@ def execute_sql_node(state: AgentState) -> dict:
     logger.info("🚀 Executing SQL Query...")
     
     sql_script = state.get("sql_script", "")
+
+    print("sql_script: ", sql_script)
     
     if not sql_script or sql_script.startswith("--"):
         logger.warning("⚠️ No valid SQL script to execute")
